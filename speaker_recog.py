@@ -7,8 +7,6 @@ import os
 from wav2features import wav2mfcc
 import warnings
 from sklearn.externals import joblib
-#from concatenate_hmm import meani,covari,stp
-#from Tr_m import q
 from ss import tr
 
 np.set_printoptions(threshold = 25000)
@@ -26,7 +24,7 @@ def sample_process(sample, temp_len):
 
 
     data = np.concatenate([A[i] for i in range(len(sample))])
-    #print(np.shape(data))
+
     temp_len_new = np.array(temp_len_new, dtype=int)
     return temp_len_new, data, A
 
@@ -54,9 +52,6 @@ for ii in range(len(names)):
             print(np.shape(temp))
         temp = np.array(temp)
         traindata.append(temp)
-#print(np.shape(traindata))
-#print(np.shape(traindata))
-#check if train file exist
 
 hmmfile = 'hmm_spr.pkl'
 istrain = True
@@ -97,32 +92,10 @@ if istrain == True:
         #h_temp.stratprob_prior = [0 ,1 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0]
         h_temp.transmat_prior = tr
         h_temp.fit(sample,len_temp)
-        """
-        frame_prob = []
-        frame_in = []
-        #print(len(sample_in))
-        #print(np.shape(sample_in))
-        for i in range(len(sample_in)):
-            temp = []
-            for j in range(len(sample_in[i])):
-                b = sample_in[i][j]
-                b = np.reshape(b,(1,39))
-                frame = h_temp._compute_log_likelihood(b)
-                temp.append(frame)
-            frame_in.append(temp)
-        frame_prob.append(frame_in)
-        frame_prob = np.reshape(frame_prob,(7,1981,1,16))
-        """
-        #s = h_temp.predict(sample,len_temp)
-    #fr_pr.append(frame_prob)
-    #print(h_temp.monitor_.converged)
-    #states.append(s)
+
     hmms.append(h_temp)
     #print(')\n')
     joblib.dump(hmms, "hmm_spr.pkl")
-    #joblib.dump(states, "states_spr.pkl")
-    #joblib.dump(fr_pr,"frame_prob_spr.pkl")
-
 
 
 #start recognising train samples
