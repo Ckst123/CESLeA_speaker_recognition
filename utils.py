@@ -1,6 +1,6 @@
 import numpy as np
 tr = []
-
+#16 number of states
 for i in range (16):
     #print(i)
     q = []
