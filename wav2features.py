@@ -46,7 +46,7 @@ def wav2logfilteng(filename, target_fs=16000, winlen=0.025, winstep=0.01, nfilt=
 
     return lfe, fs, sig
 
-
+#we used mfcc as features in this project
 # mfcc + delta + double delta
 def wav2mfcc(filename, target_fs=16000, winlen=0.025, winstep=0.01, nfilt=29, numcep=13 ):
     fs, sig = wavreadmono(filename, target_fs)
