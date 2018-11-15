@@ -1,3 +1,5 @@
+#this file is used for changing the transition matrix for state transitions
+#we can use transitions of our choice by calling the hmm.transmat_prior function
 import numpy as np
 tr = []
 #16 number of states
