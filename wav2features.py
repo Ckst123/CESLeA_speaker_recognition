@@ -1,3 +1,5 @@
+# this file is for extracting different features from raw wavefile
+
 from scipy.io import wavfile
 from scipy import signal
 import numpy as np
