@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import python_speech_features as psf
 #import math
-
 # read wav file with given sampling rate
 def wavreadmono(filename, target_fs):
     # read wav file
@@ -19,13 +18,11 @@ def wavreadmono(filename, target_fs):
         newsize = np.int(np.float(len(sig))/np.float(fs)*np.float(target_fs))
         sig = signal.resample(sig,newsize,None,0)
         fs = target_fs
-
     return fs, sig
 
 # log powerspectra of short-time Fourier transform
 def wav2spect(filename, target_fs=16000, winlen=0.025, winstep=0.01):
-    fs, sig = wavreadmono(filename, target_fs)
-    
+    fs, sig = wavreadmono(filename, target_fs)  
     # segment input 1-D signal into 0.025 sec frames
     frame_len = np.int(np.float(fs)*winlen)
     frame_step = np.int(np.float(fs)*winstep)
@@ -43,7 +40,6 @@ def wav2logfilteng(filename, target_fs=16000, winlen=0.025, winstep=0.01, nfilt=
     frame_len = np.int(np.float(fs)*winlen)
     nfft = np.int(2**np.ceil(np.log2(frame_len)))   # closest 2's power
     lfe = psf.logfbank(sig,fs,winlen,winstep,nfilt,nfft)
-
     return lfe, fs, sig
 
 #we used mfcc as features in this project
