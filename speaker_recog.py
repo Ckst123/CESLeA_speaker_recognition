@@ -96,7 +96,7 @@ if istrain == True:
         warnings.simplefilter("ignore")
         h_temp = hmm.GaussianHMM(n_components=16, tol = 0.000001, covariance_type = 'diag',algorithm = 'viterbi', n_iter=1000, verbose = True)
         #h_temp.stratprob_prior = [0 ,1 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0]
-        h_temp.transmat_prior = tr
+        #h_temp.transmat_prior = tr
         h_temp.fit(sample,len_temp)
 
     hmms.append(h_temp)
