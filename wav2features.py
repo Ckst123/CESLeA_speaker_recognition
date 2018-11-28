@@ -5,7 +5,6 @@ from scipy import signal
 import numpy as np
 import matplotlib.pyplot as plt
 import python_speech_features as psf
-#import math
 # read wav file with given sampling rate
 def wavreadmono(filename, target_fs):
     # read wav file
