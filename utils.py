@@ -7,7 +7,6 @@ for i in range (16):
     #print(i)
     q = []
     for j in range(16):
-
         #print(j)
         if j== 0:
             a = 0.6
