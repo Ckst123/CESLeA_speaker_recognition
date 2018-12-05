@@ -1,7 +1,6 @@
 """
 this code uses Python's hmmlearn library to implement HMM.
 """
-
 import hmmlearn
 from hmmlearn import hmm
 import scipy.io.wavfile as wav
