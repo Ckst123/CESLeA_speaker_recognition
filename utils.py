@@ -2,7 +2,6 @@
 #we can use transitions of our choice by calling the hmm.transmat_prior function
 import numpy as np
 tr = []
-#16 number of states
 for i in range (16):
     #print(i)
     q = []
