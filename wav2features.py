@@ -20,7 +20,7 @@ def wavreadmono(filename, target_fs):
         fs = target_fs
     return fs, sig
 
-# log powerspectra of short-time Fourier transform
+# log powerspectrum of short-time Fourier transform
 def wav2spect(filename, target_fs=16000, winlen=0.025, winstep=0.01):
     fs, sig = wavreadmono(filename, target_fs)  
     # segment input 1-D signal into 0.025 sec frames
