@@ -65,7 +65,7 @@ if(os.path.exists(hmmfile))==True:
     istrain = True
   if a!= 'y' :
       istrain = False
-      print("istrain = %s , samples will be recognized using previously trained model " % istrain)
+      print("istrain = %s , smples will be recognized using previously trained model " % istrain)
       hmms = joblib.load("hmm_spr.pkl")
       print(hmms[1])
 
