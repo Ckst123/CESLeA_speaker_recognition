@@ -3,6 +3,6 @@ This code implements speaker recognition using hmmlearn which is the python libr
 
 This is a complete code but changes are still been made to improve this code.
 
-utils.py provides some useful parameters to be used in the  main code file i.e. speaker_recog.py.
+'utils.py' provides some useful parameters to be used in the  main code file i.e. speaker_recog.py.
 
 "hmm_spr.pkl" is the file in which speaker HMM models are saved for later use without training again.
