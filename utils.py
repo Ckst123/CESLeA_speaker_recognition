@@ -19,7 +19,6 @@ for i in range (16):
         q.append(a)
     #q = np.array(q)
     q = np.roll(q,i)
-    #q = q.astype(list)
     tr.append(q)
 tr = np.array(tr)
 #print(tr)
